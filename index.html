@@ -127,7 +127,7 @@ https://templatemo.com/tm-578-first-portfolio
                                 </div>
 
                                 <p>The physical stimulus we are interested in is light. The sensors rely on the orientation of the tortoise. When Hector is behaving as usual, his dark shell reflects minimal light from the overhead lamps. When Hector flips onto his back, the tape on the bottom of his shell passively produces more light for the sensors through reflection. In this situation, light intensity is perceived as dynamic, and the sensors must produce dynamic outputs. Even though light level will vary due to outside light changes, turning the room lights on and off and people in the room blocking light, the average light level will remain constant. We are making the assumption that when Hector is behaving as usual, the light intensity follows a normal distribution centered at a low average. When light level changes quickly and with a large magnitude, the system knows Hector has flipped. We are making the assumption that the light intensity after flipping also follows a normal distribution, but with a higher average, since the light differences from outside conditions still exist. This can be represented by a step function where L is the light intensity:</p>
-                                <img src="images/img1.jpg" alt="Light Distribution" width="550" height="200">
+                                <img src="images/img1.jpg" alt="Light Distribution" width="500" height="100">
                                 
                                 </div>
                                 
@@ -149,9 +149,9 @@ https://templatemo.com/tm-578-first-portfolio
                                     <h2 class="text-white me-4 mb-0">Sensors</h2>
                                 </div>
 
-                                <p>Write about photoresistor here</p>
-
-                                <p>Write about FSR here</p>
+                                <p>Photoresistor were chosen to measure light intensity because we are interested in seeing when the light bouncing off of Hector has changed. In this situation, light intensity is perceived as dynamic, and the sensor produces a dynamic output. This sensor can be characterized as first order because although it responds very quickly (18-55msec) to the stimulus, it still requires the storage of electrons. It's necessary that the time constant be low for the photoresistor, because light intensity changes very quickly. If the system responds too slowly, then we might miss important information about fast light intensity shifts. In this case we will not miss any information required for determining whether or not Hector has flipped, because his movement is much slower than the response time of the sensor. He also remains in his flipped position until he is unflipped. Assuming the steady state response is 5 Kilo-ohms and the initial value is 20 mega-ohms, then the frequency response can be measured as:</p>
+                                <img src="images/img2.jpg" alt="Light Distribution" width="500" height="20">
+                                <p>The data was retrieved from <a href="https://components101.com/sites/default/files/component_datasheet/LDR%20Datasheet.pdf">this datasheet</a>.</p>
                             </div>
                         </div>
 
