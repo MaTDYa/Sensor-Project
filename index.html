@@ -62,11 +62,11 @@ https://templatemo.com/tm-578-first-portfolio
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Sensors</a>
+                            <a class="nav-link click-scroll" href="#section_3">Our System</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_4">Signals and Sampling</a>
+                            <a class="nav-link click-scroll" href="#section_4">Sensors Signals Sampling</a>
                         </li>
 
                         <li class="nav-item">
@@ -107,7 +107,7 @@ https://templatemo.com/tm-578-first-portfolio
 
                     <div class="row justify-content-start">
                         <p>Tortoises are curious animals that often get themselves into trouble. When a tortoise flips over onto its back, it can not get up on its own. This situation can be fatal if the tortoise is not helped quickly. The possibility of a pet tortoise flipping is a constant worry for tortoise owners when they are away from home for long periods of time.</p>
-                        <p>The Tortoise Flip Detection System determines when a tortoise has flipped over, and sends an alert to the owner. It also turns off the heat lamp over the tortoise enclosure so that the tortoise does not dehydrate as quickly, increasing the chance of survival.</p>
+                        <p>The Tortoise Flip Detection System determines when Hector has flipped over, and sends an alert to the owner. It also turns off the heat lamp over the tortoise enclosure so that Hector does not dehydrate as quickly, increasing the chance of survival. Live data can be viewed by clicking the link above.</p>
                     </div>
                 </div>
 
@@ -146,12 +146,13 @@ https://templatemo.com/tm-578-first-portfolio
                             <div class="about-thumb">
 
                                 <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
-                                    <h2 class="text-white me-4 mb-0">Sensors</h2>
+                                    <h2 class="text-white me-4 mb-0">Our System</h2>
                                 </div>
 
-                                <p>Photoresistor were chosen to measure light intensity because we are interested in seeing when the light bouncing off of Hector has changed. In this situation, light intensity is perceived as dynamic, and the sensor produces a dynamic output. This sensor can be characterized as first order because although it responds very quickly (18-55msec) to the stimulus, it still requires the storage of electrons. It's necessary that the time constant be low for the photoresistor, because light intensity changes very quickly. If the system responds too slowly, then we might miss important information about fast light intensity shifts. In this case we will not miss any information required for determining whether or not Hector has flipped, because his movement is much slower than the response time of the sensor. He also remains in his flipped position until he is unflipped. Assuming the steady state response is 5 Kilo-ohms and the initial value is 20 mega-ohms, then the frequency response can be measured as:</p>
-                                <img src="images/img2.jpg" alt="Light Distribution" width="500" height="20">
-                                <p>The data was retrieved from <a href="https://components101.com/sites/default/files/component_datasheet/LDR%20Datasheet.pdf">this datasheet</a>.</p>
+                                <p>The system we designed uses light reflected from Hector's bottom shell to indicate to photoresistors that he has flipped. We chose this design because it avoids the use of computer vision, and is not overly invasive to the tortoise. Four sensors were used, with one being placed above each corner of the rectangular tortoise enclosure. The photoresistors were pointed inwards at a 45 degree angle to maximize the area that each sensor could detect. Two overhead lights provide heat and UV radiation to Hector, so those were also used as the light source for the sensors. It should be noted that ambient lighting had minimal effects on the reflected light.</p>
+                                <img src="images/img3.jpg" alt="Hector's box" width="500" height="20">
+                                <p>A Raspberry Pi Pico W microcontroller was used to control the system. Since this microcontroller only has 3 usable ADC pins, at least 2 of the photoresistors needed to be connected in series, however putting all 4 of the sensors in series proved to cause a noticeable difference in voltage when Hector was flipped. The system also includes a switch to turn data collection on and off if, for example, the owner needed to put food into the enclosure.</p>
+                                
                             </div>
                         </div>
 
@@ -167,8 +168,12 @@ https://templatemo.com/tm-578-first-portfolio
                             <div class="about-thumb">
 
                                 <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
-                                    <h2 class="text-white me-4 mb-0">Signals and Sampling</h2>
+                                    <h2 class="text-white me-4 mb-0">Sensors Signals Sampling</h2>
                                 </div>
+                                
+                                <p>Photoresistor were chosen to measure light intensity because we are interested in seeing when the light bouncing off of Hector has changed. In this situation, light intensity is perceived as dynamic, and the sensor produces a dynamic output. This sensor can be characterized as first order because although it responds very quickly (18-55msec) to the stimulus, it still requires the storage of electrons. It's necessary that the time constant be low for the photoresistor, because light intensity changes very quickly. If the system responds too slowly, then we might miss important information about fast light intensity shifts. In this case we will not miss any information required for determining whether or not Hector has flipped, because his movement is much slower than the response time of the sensor. He also remains in his flipped position until he is unflipped. Assuming the steady state response is 5 Kilo-ohms and the initial value is 20 mega-ohms, then the frequency response can be measured as:</p>
+                                <img src="images/img2.jpg" alt="Light Distribution" width="500" height="20">
+                                <p>The data was retrieved from <a href="https://components101.com/sites/default/files/component_datasheet/LDR%20Datasheet.pdf">this datasheet</a>.</p>
 
                                 <p>Write about signals and sampling here</p>
                                 
