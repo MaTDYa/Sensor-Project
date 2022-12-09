@@ -165,7 +165,7 @@ https://templatemo.com/tm-578-first-portfolio
                             <div class="about-thumb">
 
                                 <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
-                                    <h2 class="text-white me-4 mb-0">Sensors/h2>
+                                    <h2 class="text-white me-4 mb-0">Sensors Being Utilized</h2>
                                 </div>
 
                                 <p><strong>Physical Principles</strong></p>
@@ -198,6 +198,53 @@ https://templatemo.com/tm-578-first-portfolio
                                 <p>There are no requirements for the signal conditioning circuit to use the photoresistor for this project. Since we are not interested in knowing the actual lux value of our measurements, the nonlinearity of the transfer function is not important. Only a simple voltage divider is needed so that the voltage drop along the photoresistor is noticeable. A 10 kilo-ohm resistor was used.</p>
                                 <img src="images/img4.jpg" alt="Diagram" width="500" height="250">
                                 <img src="images/img5.jpg" alt="Circuit" width="600" height="200">
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+                 
+            <section class="about section-padding" id="section_5">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="row justify-content-start">
+                        <!--<div class="col-lg-6 col-12 mt-5 mt-lg-0">-->
+                            <div class="about-thumb">
+
+                                <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
+                                    <h2 class="text-white me-4 mb-0">Sampling and Quantization</h2>
+                                </div>
+                                
+                                <p><strong>Sampling Rate Selection</strong></p>
+                                <p>The sampling rate for light measurements was chosen to be 0.2 Hz. Since we are only interested in the difference between the light measurement before and after Hector flips, it is not necessary that we record measurements of the actual flipping event. Therefore, the only factor affecting the sampling rate is how quickly we want to know that the tortoise has flipped. By taking a measurement every 5 seconds, the owner will be alerted soon after the tortoise has flipped.</p>
+                                <p><strong>Measurement Resolution</strong></p>
+                                <p>The measurement resolution for light measurements was chosen to be 12 bits. This means that the output voltage is represented by a value between 0 and 4095. Micropython has a built-in function that converts the value outputted by the ADC to 16 bits using bit-shifting. Even though the ADC can output 4096 different values, we will have 65536 different possible values corresponding to different light levels. Since the light level generally fluctuates within a small range, the resolution could be much smaller with similar results. This range is 43-49% relative light, or about 28180-31456 on the scale of 0-65535. This is a range of only 3277 numbers. Using 12 bits would suffice, but 16 bits works as well.</p>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            
+            <section class="about section-padding" id="section_6">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="row justify-content-start">
+                        <!--<div class="col-lg-6 col-12 mt-5 mt-lg-0">-->
+                            <div class="about-thumb">
+
+                                <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
+                                    <h2 class="text-white me-4 mb-0">Signal Processing</h2>
+                                </div>
+                                
+                                <p>The analog signal from the signal conditioning circuit goes directly to the built-in analog to digital converter. No analog signal processing is used in our system. Once converted to digital, the data is processed on the Raspberry Pi Pico in uPython. A sample of the code can be seen below.</p>
+                                <p>Background subtraction is a method for extracting the important, changing information from the background information. This technique is mostly used in computer vision applications to separate the foreground image from background so that it can be further analyzed. In this project, the background information is the ambient lighting, and the foreground information is the light from Hector flipping. By subtracting the background, the foreground can be examined for a flipping event. Background subtraction is performed on the raw data by taking 10 data points at a time, finding the average, and then subtracting that average from each incoming data point. The average is updated every 10 timesteps. Slow changes in ambient lighting are removed, so that only large, rapid changes remain in the data. After background subtraction, a moving average is applied for noise reduction. The program determines that a flip has occurred when the average light intensity after background subtraction rises above 0.6 relative light intensity. </p>
+                                <img src="images/img6.jpg" alt="Code" width="500" height="600">
                                 
                             </div>
                         </div>
