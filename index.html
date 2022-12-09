@@ -118,7 +118,7 @@ https://templatemo.com/tm-578-first-portfolio
                         <p>The goals of this project were to non-invasively determine when a tortoise has flipped, alert the owner if a flip happens, and turn off the overhead lights.</p>
                         <p><strong>Our Solution</strong></p>
                         <p>The system we designed uses light reflected from Hector's bottom shell to indicate to photoresistors that he has flipped. We chose this design because it avoids the use of computer vision, and is not overly invasive to the tortoise. Four sensors were used, with one being placed above each corner of the rectangular tortoise enclosure. The photoresistors were pointed inwards at a 45 degree angle to maximize the area that each sensor could detect. Two overhead lights provide heat and UV radiation to Hector, so those were also used as the light source for the sensors. A Raspberry Pi Pico W microcontroller was used to control the system. Since this microcontroller only has 3 usable ADC pins, at least 2 of the photoresistors needed to be connected in series, however putting all 4 of the sensors in series proved to cause a noticeable difference in voltage when Hector was flipped. The system also includes a switch to turn data collection on and off if, for example, the owner needed to put food into the enclosure. In order to cause a distinguishable difference in light intensity when Hector flipped, reflective tape was placed on the bottom of his shell. This tape must be frequently replaced so that it doesn't harm the tortoise.</p>
-                        <!--<img src="images/img3.jpg" alt="Hector's box" width="525" height="700">-->
+                        <!--<img src="images/img0.jpg" alt="Hector's box" width="525" height="700">-->
                         <!--<img src="images/img3.jpg" alt="Hector with tape" width="525" height="700">-->
                     </div>
                 </div>
@@ -174,7 +174,7 @@ https://templatemo.com/tm-578-first-portfolio
                                 <p>In this situation, light intensity is perceived as dynamic, and the sensor produces a dynamic output. This sensor can be characterized as first order because although it responds very quickly (2.8-18msec) to the stimulus, it still requires the storage of electrons. It's necessary that the time constant be low for the photoresistor, because light intensity changes very quickly. If the system responds too slowly, then we might miss important information about fast light intensity shifts. In this case we will not miss any information required for determining whether or not Hector has flipped, because his movement is much slower than the response time of the sensor. He also remains in his flipped position until he is unflipped.</p>
                                 <p><strong>Sensor Characteristics</strong></p> 
                                 <p>The possible resistance ranges from 400 ohms (1000 lux) to 9 Kilo-ohms (10 lux). The sensor responds best with 500 to 600 nm wavelength light. It does not respond to light with wavelength under 400 nm, so the overhead UV light used for Hector’s enclosure should have little effect. Assuming the steady state response is 5 Kilo-ohms and the initial value is 20 mega-ohms (from datasheet), then the response can be measured as:</p>
-                                <img src="images/img3.jpg" alt="Response" width="500" height="25">
+                                <img src="images/img2.jpg" alt="Response" width="500" height="25">
                                 <p>The data was retrieved from <a href="https://components101.com/sites/default/files/component_datasheet/LDR%20Datasheet.pdf">this datasheet</a>. Photoresistors can be used in any situation where the light intensity or light intensity changes are needed. This includes applications such as lighting control systems, burglar alarm systems, and night lights.</p>
                             </div>
                         </div>
@@ -257,32 +257,41 @@ https://templatemo.com/tm-578-first-portfolio
             <section class="about section-padding" id="section_5">
                 <div class="container">
                     <div class="row">
+                        
+                        <div class="row justify-content-start">
+                            <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
+                                <h2 class="text-white me-4 mb-0">Experiments</h2>
+                            </div>
+                            
+                            <p>Originally, we expected that the light distribution could be represented by a normal distribution. After combining several samples with the lights both on and off and the tortoise flipped and not flipped, we found that this assumption was correct. The following data show the distribution of light intensities in all four scenarios. The distributions are similar for each, but with slightly different averages depending on the lighting and flip status.</p>
+                        
+                        </div>
 
                         <div class="col-lg-6 col-12">
                             <div class="profile-thumb">
                                 <div class="profile-title">
-                                    <h4 class="mb-0">Comparison to assumptions about light</h4>
+                                    <h4 class="mb-0">Comparison to assumptions</h4>
                                 </div>
 
                                 <div class="profile-body">
                                     <p>
                                         <span class="profile-small-title">Room lights off</span> 
-                                        <span>Mean: 45.11%,     Standard deviation: 0.37%/span>
+                                        <span>Mean: 45.11%,     Standard deviation: 0.37%</span>
                                     </p>
 
                                     <p>
-                                        <span class="profile-small-title">Room lights off, tortoise flip</span> 
-                                        <span>Mean: 45.79%,     Standard deviation: 0.35%/span>
+                                        <span class="profile-small-title">+tortoise flip</span> 
+                                        <span>Mean: 45.79%,     Standard deviation: 0.35%</span>
                                     </p>
 
                                     <p>
                                         <span class="profile-small-title">Room lights on</span> 
-                                         <span>Mean: 46.15%,     Standard deviation: 0.40%/span>
+                                         <span>Mean: 46.15%,     Standard deviation: 0.40%</span>
                                     </p>
 
                                     <p>
-                                        <span class="profile-small-title">Room lights on, tortoise flip</span> 
-                                        <span>Mean: 46.62%,     Standard deviation: 0.35%/span>
+                                        <span class="profile-small-title">+tortoise flip</span> 
+                                        <span>Mean: 46.62%,     Standard deviation: 0.35%</span>
                                     </p>
                                 </div>
                             </div>
@@ -300,24 +309,39 @@ https://templatemo.com/tm-578-first-portfolio
                                     </div>
 
                                     <div class="col-lg-6 col-6 featured-border-start featured-border-bottom ps-5 py-2">
-                                        <strong class="featured-numbers">245</strong>
+                                        <!--<strong class="featured-numbers">20+</strong>
 
-                                        <p class="featured-text">Happy Customers</p>
+                                        <p class="featured-text">Years of Experiences</p>-->
+                                        <img src="images/img7.jpg" alt="Code" width="200" height="100">
                                     </div>
 
                                     <div class="col-lg-6 col-6 pt-4">
-                                        <strong class="featured-numbers">640</strong>
+                                        <!--<strong class="featured-numbers">20+</strong>
 
-                                        <p class="featured-text">Project Finished</p>
+                                        <p class="featured-text">Years of Experiences</p>-->
+                                        <img src="images/img8.jpg" alt="Code" width="200" height="100">
                                     </div>
 
                                     <div class="col-lg-6 col-6 featured-border-start ps-5 pt-4">
-                                        <strong class="featured-numbers">72+</strong>
+                                        <!--<strong class="featured-numbers">20+</strong>
 
-                                        <p class="featured-text">Digital Awards</p>
+                                        <p class="featured-text">Years of Experiences</p>-->
+                                        <img src="images/img9.jpg" alt="Code" width="200" height="100">
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="row justify-content-start">
+                            
+                            <p>Background subtraction proved successful by removing slow-changing variations in lighting. The following figures show the raw data, data after background subtraction, and then the averaged data. You can see in the third figure below that all three scenarios (flip with light on, flip with light off, and the light turning on) have a similar peak. Using this data, the range of a light increase of 0.6 or greater relative intensity was determined to signify a flip. It is assumed that the room lights will only be turned on when the owner is in the room and the Tortoise Flip Detection System will not be in use, so this case can be ignored.</p>
+                            <img src="images/img10.jpg" alt="Code" width="200" height="100">
+                            <img src="images/img11.jpg" alt="Code" width="200" height="100">
+                            <img src="images/img12.jpg" alt="Code" width="200" height="100">
+                            
+                            <p><strong>Error</strong></p>
+                            <p>Write about errors here</p>
+                            
                         </div>
 
                     </div>
@@ -335,7 +359,7 @@ https://templatemo.com/tm-578-first-portfolio
                                     <h2 class="text-white me-4 mb-0">Discussion</h2>
                                 </div>
 
-                                <p>Write about signals and sampling here</p>
+                                <p>Write about discussion here</p>
                                 
                             </div>
                         </div>
