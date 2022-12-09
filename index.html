@@ -113,10 +113,12 @@ https://templatemo.com/tm-578-first-portfolio
                         </div>
                     </div>
 
-                    <div class="row justify-content-start text-white">
+                    <div class="row justify-content-start">
                         <p>Tortoises are curious animals that often get themselves into trouble. When a tortoise flips over onto its back, it can not get up on its own. This situation can be fatal if the tortoise is not helped quickly. The possibility of a pet tortoise flipping is a constant worry for tortoise owners when they are away from home for long periods of time. The Tortoise Flip Detection System determines when Hector has flipped onto his back, and sends an alert via email to the owner. It also turns off the heat lamp over the tortoise enclosure so that Hector does not dehydrate as quickly, increasing his chance of survival. Live data can be viewed by clicking the link above.</p>
                         <p>The goals of this project were to non-invasively determine when a tortoise has flipped, alert the owner if a flip happens, and turn off the overhead lights.</p>
-                        <h2 class="text-white me-4 mb-0">Phenomena of Interest</h2>
+                        <p><strong>Our Solution</strong></p>
+                        <p>The system we designed uses light reflected from Hector's bottom shell to indicate to photoresistors that he has flipped. We chose this design because it avoids the use of computer vision, and is not overly invasive to the tortoise. Four sensors were used, with one being placed above each corner of the rectangular tortoise enclosure. The photoresistors were pointed inwards at a 45 degree angle to maximize the area that each sensor could detect. Two overhead lights provide heat and UV radiation to Hector, so those were also used as the light source for the sensors. A Raspberry Pi Pico W microcontroller was used to control the system. Since this microcontroller only has 3 usable ADC pins, at least 2 of the photoresistors needed to be connected in series, however putting all 4 of the sensors in series proved to cause a noticeable difference in voltage when Hector was flipped. The system also includes a switch to turn data collection on and off if, for example, the owner needed to put food into the enclosure. In order to cause a distinguishable difference in light intensity when Hector flipped, reflective tape was placed on the bottom of his shell. This tape must be frequently replaced so that it doesn't harm the tortoise.</p>
+                        <img src="images/img0.jpg" alt="Light Distribution" width="525" height="700">
                     </div>
                 </div>
 
@@ -134,12 +136,17 @@ https://templatemo.com/tm-578-first-portfolio
                                 <div class="section-title-wrap d-flex justify-content-end align-items-center mb-4">
                                     <h2 class="text-white me-4 mb-0">Phenomena of Interest</h2>
                                 </div>
-
-                                <p>The physical stimulus we are interested in is light. The sensors rely on the orientation of the tortoise. When Hector is behaving as usual, his dark shell reflects minimal light from the overhead lamps. When Hector flips onto his back, the tape on the bottom of his shell passively produces more light for the sensors through reflection. In this situation, light intensity is perceived as dynamic, and the sensors must produce dynamic outputs. Even though light level will vary due to outside light changes, turning the room lights on and off and people in the room blocking light, the average light level will remain constant. We are making the assumption that when Hector is behaving as usual, the light intensity follows a normal distribution centered at a low average. When light level changes quickly and with a large magnitude, the system knows Hector has flipped. We are making the assumption that the light intensity after flipping also follows a normal distribution, but with a higher average, since the light differences from outside conditions still exist. This can be represented by a step function where L is the light intensity:</p>
+                                <p><strong>Physical Principles</strong></p>
+                                <p>The physical stimulus we are interested in is the tortoise flipping onto its back. Since we can not measure a tortoise’s position directly, we are using the light reflected from its shell to get information on its position.</p>
+                                <p>Light is a form of electromagnetic radiation that can have different wavelengths, frequencies, and intensities. Visible light, or the light that humans can see, has wavelengths between 400 and 700 nm. Infrared radiation has longer wavelengths, and ultraviolet radiation has shorter wavelengths than visible light.</p>
+                                
+                                <p><strong>Static and Dynamic Behavior</strong></p>
+                                <p>Hector sleeps, walks, and flips throughout the day, therefore he exhibits dynamic behavior. As he moves, his orientation and positioning changes. In this project, the sensors rely on the orientation of the tortoise. When Hector is behaving as usual, his dark shell reflects minimal light from the overhead lamps. When Hector flips onto his back, the tape on the bottom of his shell passively produces more light for the sensors through reflection. In this situation, light intensity is perceived as dynamic, and the sensors must produce dynamic outputs. Even though light level will vary due to outside light changes, turning the room lights on and off and people in the room blocking light, the average light level will remain relatively stable. We are making the assumption that when Hector is behaving as usual, the light intensity follows a normal distribution centered at a low average. When light level changes quickly and with a large magnitude, the system knows Hector has flipped. We are making the assumption that the light intensity after flipping also follows a normal distribution, but with a higher average, since the light differences from outside conditions still exist. Therefore, we assume that most of the signals captured by the light sensor are stable and static. We focus more on the significant dynamic changes. The light distribution can be represented by a step function where L is the light intensity:</p>
                                 <img src="images/img1.jpg" alt="Light Distribution" width="500" height="100">
                                 
-                                </div>
-                                
+                                <p><strong>Signal Characteristics</strong></p>
+                                <p>Overall, the phenomenon we are interested in is whether or not Hector is flipped. This is represented by a binary value, 0 if he is not flipped and 1 if he is, which we will determine using light. Even though light itself has characteristics of a wave, light in this project does not. We are taking individual values of light and looking at the difference between them.</p>
+                                    
                             </div>
                         </div>
 
