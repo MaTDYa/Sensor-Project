@@ -117,17 +117,23 @@ https://templatemo.com/tm-578-first-portfolio
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#535da1" fill-opacity="1" d="M0,160L24,160C48,160,96,160,144,138.7C192,117,240,75,288,64C336,53,384,75,432,106.7C480,139,528,181,576,208C624,235,672,245,720,240C768,235,816,213,864,186.7C912,160,960,128,1008,133.3C1056,139,1104,181,1152,202.7C1200,224,1248,224,1296,197.3C1344,171,1392,117,1416,90.7L1440,64L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path></svg>
             
-                <div class="row justify-content-start">
-                    <p>Tortoises are curious animals that often get themselves into trouble. When a tortoise flips over onto its back, it can not get up on its own. This situation can be fatal if the tortoise is not helped quickly. The possibility of a pet tortoise flipping is a constant worry for tortoise owners when they are away from home for long periods of time. The Tortoise Flip Detection System determines when Hector has flipped onto his back, and sends an alert via email to the owner. It also turns off the heat lamp over the tortoise enclosure so that Hector does not dehydrate as quickly, increasing his chance of survival. Live data can be viewed by clicking the link above.</p>
-                    <p>The goals of this project were to non-invasively determine when a tortoise has flipped, alert the owner if a flip happens, and turn off the overhead lights.</p>
-                    <p><strong>Our Solution</strong></p>
-                    <p>The system we designed uses light reflected from Hector's bottom shell to indicate to photoresistors that he has flipped. We chose this design because it avoids the use of computer vision, and is not overly invasive to the tortoise. Four sensors were used, with one being placed above each corner of the rectangular tortoise enclosure. The photoresistors were pointed inwards at a 45 degree angle to maximize the area that each sensor could detect. Two overhead lights provide heat and UV radiation to Hector, so those were also used as the light source for the sensors. A Raspberry Pi Pico W microcontroller was used to control the system. Since this microcontroller only has 3 usable ADC pins, at least 2 of the photoresistors needed to be connected in series, however putting all 4 of the sensors in series proved to cause a noticeable difference in voltage when Hector was flipped. The system also includes a switch to turn data collection on and off if, for example, the owner needed to put food into the enclosure. In order to cause a distinguishable difference in light intensity when Hector flipped, reflective tape was placed on the bottom of his shell. This tape must be frequently replaced so that it doesn't harm the tortoise.</p>
-                    <!--<img src="images/img0.jpg" alt="Hector's box" width="525" height="700">-->
-                    <!--<img src="images/img3.jpg" alt="Hector with tape" width="525" height="700">-->
-                </div>
-            
             </section>
+            
+            <section class="about section-padding">
+                <div class="container">
+                    <div class="row">
 
+                        <div class="row justify-content-start">
+                            <p>Tortoises are curious animals that often get themselves into trouble. When a tortoise flips over onto its back, it can not get up on its own. This situation can be fatal if the tortoise is not helped quickly. The possibility of a pet tortoise flipping is a constant worry for tortoise owners when they are away from home for long periods of time. The Tortoise Flip Detection System determines when Hector has flipped onto his back, and sends an alert via email to the owner. It also turns off the heat lamp over the tortoise enclosure so that Hector does not dehydrate as quickly, increasing his chance of survival. Live data can be viewed by clicking the link above.</p>
+                            <p>The goals of this project were to non-invasively determine when a tortoise has flipped, alert the owner if a flip happens, and turn off the overhead lights.</p>
+                            <p><strong>Our Solution</strong></p>
+                            <p>The system we designed uses light reflected from Hector's bottom shell to indicate to photoresistors that he has flipped. We chose this design because it avoids the use of computer vision, and is not overly invasive to the tortoise. Four sensors were used, with one being placed above each corner of the rectangular tortoise enclosure. The photoresistors were pointed inwards at a 45 degree angle to maximize the area that each sensor could detect. Two overhead lights provide heat and UV radiation to Hector, so those were also used as the light source for the sensors. A Raspberry Pi Pico W microcontroller was used to control the system. Since this microcontroller only has 3 usable ADC pins, at least 2 of the photoresistors needed to be connected in series, however putting all 4 of the sensors in series proved to cause a noticeable difference in voltage when Hector was flipped. The system also includes a switch to turn data collection on and off if, for example, the owner needed to put food into the enclosure. In order to cause a distinguishable difference in light intensity when Hector flipped, reflective tape was placed on the bottom of his shell. This tape must be frequently replaced so that it doesn't harm the tortoise.</p>
+                            <!--<img src="images/img0.jpg" alt="Hector's box" width="525" height="700">-->
+                            <!--<img src="images/img3.jpg" alt="Hector with tape" width="525" height="700">-->
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section class="about section-padding" id="section_2">
                 <div class="container">
