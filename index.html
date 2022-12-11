@@ -348,7 +348,8 @@ https://templatemo.com/tm-578-first-portfolio
                             
                             <p><strong>Error</strong></p>
                             <p>Since we were only interested in differences in light intensity and not exact values, uncertainty within the sensor was not an issue. The datasheet for this photoresistor also had no information on error or uncertainty. We evaluated the performance of the Tortoise Flip Detection system using the results of 10 trials. In 5 of the trials, the tortoise was flipped. For the other 5 trials, he was not flipped. Each trial lasted up to 30 seconds. A confusion matrix was created from the results, seen below.</p>
-                            <img src="images/img13.jpg" alt="table0" width="100" height="50">
+                            <img src="images/img14.jpg" alt="table0" width="500" height="300">
+                            <p>After calculations based on the confusion matrix, some critical values were derived. The balanced accuracy is 70%, which is lower than the initial goal to detect 9/10 flips. The F1-score is a measure of the test’s accuracy from the precision and recall of the test and scales from 0 to 1 (zero to perfect precision and recall). The calculated score is 0.73, which is an acceptable value for our purposes. Diagnostic odds ratio (DOR) is a measure of the effectiveness of a diagnostic test, a single indicator of test performance while is independent of prevalence. It is expected to be higher in better test performance and in our case is 6. Another term of interest is the false positive rate which was initially targeted to be minimized yet in our case reaches 40%. To solve this issue, a supplementary sensor should be applied to our model.</p>
                             
                         </div>
 
@@ -367,7 +368,8 @@ https://templatemo.com/tm-578-first-portfolio
                                     <h2 class="text-white me-4 mb-0">Discussion</h2>
                                 </div>
 
-                                <p>Write about discussion here</p>
+                                <p>The response to a detected positive signal is to send an email notification to the owner through AdafruitIO. Then, the light above Hector can be turned off automatically through a smart plug. However, the smart plug we have cannot interface with the raspberry pi pico or the phone to receive direction of turning on and off. If the owner does not see the message for a while, Hector would be threatened to lose hydration. Therefore, if the smart plug could be replaced with a “smarter” one, the turning off can be automated when the flipping is identified.</p>
+                                <p>Since the accuracy is below expectations and the false alarm rate is high, we can consider using another sensor to increase the accuracy. The original plan wa sto use a series of photoresistors and apply 4 force resistors supplementarily to estimate whether Hector is flipped. Unfortunately, the force resistors did not arrive in time and this step was delayed. We would have placed the force resistors at each corner of Hector’s enclosure and connected them in series. If Hector is flipped, the total force measured may represent a sudden variation due to his movements trying to turn back. Then we have two references to confer the state of Hector: light change and the force variation. If light received by the photoresistors increases but the total force remains constant, it is highly possible that this is a false positive signal due to the noise of ambient light. Force signals are less disturbed by the environment but are more dependent on the behavior of Hector himself. Adding this measurement, the false positive could be reduced substantially.</p>
                                 
                             </div>
                         </div>
@@ -388,7 +390,10 @@ https://templatemo.com/tm-578-first-portfolio
                                     <h2 class="text-white me-4 mb-0">References</h2>
                                 </div>
 
-                                <p>Write references here</p>
+                                <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.physics-and-radio-electronics.com%2Felectronic-devices-and-circuits%2Fpassive-components%2Fresistors%2Fphotoresistor.html&psig=AOvVaw3P3xTqmXV-J_bFLnUm_mQY&ust=1670523914026000&source=images&cd=vfe&ved=0CBAQ3YkBahcKEwjguMKakej7AhUAAAAAHQAAAAAQBA">Photoresistor information</a>
+                                <a href="https://components101.com/sites/default/files/component_datasheet/LDR%20Datasheet.pdf">Photoresistor datasheet</a>
+                                <a href="https://analyticsindiamag.com/using-background-subtraction-methods-in-image-processing/">Background subtraction</a>
+                                <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a>
                                 
                             </div>
                         </div>
