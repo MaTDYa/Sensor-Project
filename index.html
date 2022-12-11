@@ -129,7 +129,6 @@ https://templatemo.com/tm-578-first-portfolio
                             <p><strong>Our Solution</strong></p>
                             <p>The system we designed uses light reflected from Hector's bottom shell to indicate to photoresistors that he has flipped. We chose this design because it avoids the use of computer vision, and is not overly invasive to the tortoise. Four sensors were used, with one being placed above each corner of the rectangular tortoise enclosure. The photoresistors were pointed inwards at a 45 degree angle to maximize the area that each sensor could detect. Two overhead lights provide heat and UV radiation to Hector, so those were also used as the light source for the sensors. A Raspberry Pi Pico W microcontroller was used to control the system. Since this microcontroller only has 3 usable ADC pins, at least 2 of the photoresistors needed to be connected in series, however putting all 4 of the sensors in series proved to cause a noticeable difference in voltage when Hector was flipped. The system also includes a switch to turn data collection on and off if, for example, the owner needed to put food into the enclosure. In order to cause a distinguishable difference in light intensity when Hector flipped, reflective tape was placed on the bottom of his shell. This tape must be frequently replaced so that it doesn't harm the tortoise.</p>
                             <img src="images/img0.jpg" alt="Hector's box" width="525" height="700">
-                            <img src="images/img3.jpg" alt="Hector with tape" width="525" height="700">
                         </div>
                     </div>
                 </div>
@@ -343,13 +342,13 @@ https://templatemo.com/tm-578-first-portfolio
                         <div class="row justify-content-start">
                             
                             <p>Background subtraction proved successful by removing slow-changing variations in lighting. The following figures show the raw data, data after background subtraction, and then the averaged data. You can see in the third figure below that all three scenarios (flip with light on, flip with light off, and the light turning on) have a similar peak. Using this data, the range of a light increase of 0.6 or greater relative intensity was determined to signify a flip. It is assumed that the room lights will only be turned on when the owner is in the room and the Tortoise Flip Detection System will not be in use, so this case can be ignored.</p>
-                            <img src="images/img10.png" alt="graph0" width="150" height="200">
-                            <img src="images/img11.png" alt="graph1" width="150" height="200">
-                            <img src="images/img12.png" alt="graph2" width="150" height="200">
+                            <img src="images/img10.jpg" alt="graph0" width="150" height="200">
+                            <img src="images/img11.jpg" alt="graph1" width="150" height="200">
+                            <img src="images/img12.jpg" alt="graph2" width="150" height="200">
                             
                             <p><strong>Error</strong></p>
                             <p>Since we were only interested in differences in light intensity and not exact values, uncertainty within the sensor was not an issue. The datasheet for this photoresistor also had no information on error or uncertainty. We evaluated the performance of the Tortoise Flip Detection system using the results of 10 trials. In 5 of the trials, the tortoise was flipped. For the other 5 trials, he was not flipped. Each trial lasted up to 30 seconds. A confusion matrix was created from the results, seen below.</p>
-                            <img src="images/img13.png" alt="table0" width="100" height="50">
+                            <img src="images/img13.jpg" alt="table0" width="100" height="50">
                             
                         </div>
 
